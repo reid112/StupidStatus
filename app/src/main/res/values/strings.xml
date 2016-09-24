@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">StupidStatus</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="button_getStatus">Get Status</string>
+    <string name="label_somethingWentWrong">Oops, something went wrong :(</string>
+    <string name="label_addStatus">Add Status</string>
+    <string name="button_add">Add</string>
+    <string name="message_pleaseEnterStatus">Please enter a status</string>
+</resources>
