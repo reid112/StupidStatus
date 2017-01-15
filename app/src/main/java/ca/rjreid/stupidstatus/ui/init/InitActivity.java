@@ -10,12 +10,14 @@ import ca.rjreid.stupidstatus.ui.status.StatusActivity;
 
 public class InitActivity extends BaseActivity {
 
+    //region Lifecycle
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         startActivity(StatusActivity.createIntent(this));
         finish();
     }
+    //endregion
 
     //region Base Activity Implementations
     @Override

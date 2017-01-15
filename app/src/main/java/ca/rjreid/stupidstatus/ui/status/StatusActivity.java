@@ -23,19 +23,28 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class StatusActivity extends BaseActivity implements StatusDelegate {
 
+    //region Constants
     private static final String ENDPOINT = "http://stupidstat.us/api/";
     private static final String ARG_CURRENT_STATUS_TEXT = "arg_current_status_text";
+    //endregion
 
+    //region Variables
     private StatusQuery statusQuery;
     private String currentStatusText;
+    //endregion
 
+    //region Views
     @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.activity_main_status_text_view) TextView statusTextView;
+    //endregion
 
+    //region Intents
     public static Intent createIntent(Context context) {
         return new Intent(context, StatusActivity.class);
     }
+    //endregion
 
+    //region Lifecycle
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +67,7 @@ public class StatusActivity extends BaseActivity implements StatusDelegate {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -78,7 +87,9 @@ public class StatusActivity extends BaseActivity implements StatusDelegate {
         outState.putString(ARG_CURRENT_STATUS_TEXT, currentStatusText);
         super.onSaveInstanceState(outState);
     }
+    //endregion
 
+    //region Click Handlers
     @OnClick(R.id.activity_main_status_button)
     public void getStatus() {
         Call<Status> call = statusQuery.getStatus();
@@ -96,6 +107,7 @@ public class StatusActivity extends BaseActivity implements StatusDelegate {
             }
         });
     }
+    //endregion
 
     //region Base Activity Implementations
     @Override
