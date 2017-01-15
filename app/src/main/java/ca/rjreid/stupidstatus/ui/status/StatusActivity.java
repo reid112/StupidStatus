@@ -1,7 +1,8 @@
-package ca.rjreid.stupidstatus;
+package ca.rjreid.stupidstatus.ui.status;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,13 +11,17 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import ca.rjreid.stupidstatus.R;
+import ca.rjreid.stupidstatus.data.Status;
+import ca.rjreid.stupidstatus.data.StatusQuery;
+import ca.rjreid.stupidstatus.ui.base.BaseActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class StatusActivity extends BaseActivity implements StatusDelegate {
 
     private static final String ENDPOINT = "http://stupidstat.us/api/";
     private static final String ARG_CURRENT_STATUS_TEXT = "arg_current_status_text";
@@ -25,15 +30,16 @@ public class MainActivity extends AppCompatActivity {
     private String currentStatusText;
 
     @BindView(R.id.toolbar) Toolbar toolbar;
-    //@BindView(R.id.fab) FloatingActionButton fab;
     @BindView(R.id.activity_main_status_text_view) TextView statusTextView;
+
+    public static Intent createIntent(Context context) {
+        return new Intent(context, StatusActivity.class);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        setSupportActionBar(toolbar);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ENDPOINT)
@@ -91,4 +97,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //region Base Activity Implementations
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_status;
+    }
+    //endregion
 }
