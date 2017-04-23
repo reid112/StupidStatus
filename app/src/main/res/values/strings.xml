@@ -7,4 +7,5 @@
     <string name="label_addStatus">Add Status</string>
     <string name="button_add">Add</string>
     <string name="message_pleaseEnterStatus">Please enter a status</string>
+    <string name="label_init">Stupid\nStatus</string>
 </resources>

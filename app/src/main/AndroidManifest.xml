@@ -27,13 +27,13 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <!-- Accepts URIs that begin with "http://www.example.com/gizmos” -->
+                <!-- Accepts URIs that begin with "http://www.stupidstatus.com/android” -->
                 <data
                     android:scheme="http"
                     android:host="www.stupidstatus.com"
                     android:pathPrefix="/android" />
                 <!-- note that the leading "/" is required for pathPrefix-->
-                <!-- Accepts URIs that begin with "example://gizmos” -->
+                <!-- Accepts URIs that begin with "stupidstatus://android” -->
                 <data
                     android:scheme="stupidstatus"
                     android:host="android" />
