@@ -1,4 +1,4 @@
-package ca.rjreid.stupidstatus.ui.base;
+package com.stupidstatus.android.ui.base;
 
 
 import android.os.Bundle;
@@ -9,8 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.stupidstatus.android.R;
+
 import butterknife.ButterKnife;
-import ca.rjreid.stupidstatus.R;
 
 public abstract class BaseActivity extends AppCompatActivity {
     @Nullable protected AppBarLayout appBarLayout;

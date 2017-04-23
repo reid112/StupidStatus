@@ -1,11 +1,11 @@
-package ca.rjreid.stupidstatus.ui.init;
+package com.stupidstatus.android.ui.init;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import ca.rjreid.stupidstatus.R;
-import ca.rjreid.stupidstatus.ui.base.BaseActivity;
-import ca.rjreid.stupidstatus.ui.status.StatusActivity;
+import com.stupidstatus.android.R;
+import com.stupidstatus.android.ui.base.BaseActivity;
+import com.stupidstatus.android.ui.status.StatusActivity;
 
 
 public class InitActivity extends BaseActivity {

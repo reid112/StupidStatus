@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@color/colorBackground"
-    tools:context="ca.rjreid.stupidstatus.ui.status.StatusActivity">
+    tools:context="com.stupidstatus.android.ui.status.StatusActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbarlayout"

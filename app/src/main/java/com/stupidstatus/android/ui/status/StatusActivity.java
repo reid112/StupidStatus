@@ -1,4 +1,4 @@
-package ca.rjreid.stupidstatus.ui.status;
+package com.stupidstatus.android.ui.status;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,20 +8,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.stupidstatus.android.R;
+import com.stupidstatus.android.data.Status;
+import com.stupidstatus.android.data.StatusQuery;
+import com.stupidstatus.android.ui.base.BaseActivity;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import ca.rjreid.stupidstatus.R;
-import ca.rjreid.stupidstatus.data.Status;
-import ca.rjreid.stupidstatus.data.StatusQuery;
-import ca.rjreid.stupidstatus.ui.base.BaseActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class StatusActivity extends BaseActivity implements StatusDelegate {
+public class StatusActivity extends BaseActivity {
 
     //region Constants
     private static final String ENDPOINT = "http://stupidstat.us/api/";
