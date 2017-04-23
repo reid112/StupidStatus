@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.stupidstatus.android.R;
 
 import butterknife.ButterKnife;
@@ -17,11 +18,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Nullable protected AppBarLayout appBarLayout;
     protected ActionBar actionBar;
     protected Toolbar toolbar;
+    private FirebaseAnalytics firebaseAnalytics;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(getLayoutId());
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
         bindViews();
         onInitializeActionBar();
     }
@@ -85,6 +88,14 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
+    }
+
+    public void logFirebaseEvent(String id, String name, String contentType) {
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, id);
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, name);
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, contentType);
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
 
     abstract protected int getLayoutId();

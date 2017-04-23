@@ -16,6 +16,8 @@ public class InitActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        logFirebaseEvent("1", "App init", "Init");
+
         // Stay on init screen for 1.5 seconds
         new Handler().postDelayed(new Runnable() {
             @Override

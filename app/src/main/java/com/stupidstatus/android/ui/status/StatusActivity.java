@@ -76,6 +76,9 @@ public class StatusActivity extends BaseActivity {
     //region Click Handlers
     @OnClick(R.id.activity_main_status_button)
     public void getStatus() {
+
+        logFirebaseEvent("2", "Get Status", "Button Press");
+
         Call<Status> call = statusQuery.getStatus();
         call.enqueue(new Callback<Status>() {
             @Override
@@ -83,11 +86,13 @@ public class StatusActivity extends BaseActivity {
                 Status status = response.body();
                 currentStatusText = status.getText();
                 statusTextView.setText(currentStatusText);
+                logFirebaseEvent("3", "Got Status - " + currentStatusText, "onResponse");
             }
 
             @Override
             public void onFailure(Call<Status> call, Throwable t) {
                 statusTextView.setText(R.string.label_somethingWentWrong);
+                logFirebaseEvent("4", "Failed to get status", "onFailure");
             }
         });
     }
