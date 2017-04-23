@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "362243649750",
+    "firebase_url": "https://stupidstatus-13dce.firebaseio.com",
+    "project_id": "stupidstatus-13dce",
+    "storage_bucket": "stupidstatus-13dce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362243649750:android:9b782fb23efea4ea",
+        "android_client_info": {
+          "package_name": "com.stupidstatus.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362243649750-im83ehctkar7s6jghn91vnoggit67o0q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stupidstatus.android",
+            "certificate_hash": "0b3740310a3d9d03344278ee6a44ba6f7017a26a"
+          }
+        },
+        {
+          "client_id": "362243649750-nneiko8cu5qed9pn3o0831hkq7anvh4q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD_JZtktjy2o7rDD7WBLutd_CukSE_1Lw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362243649750-nneiko8cu5qed9pn3o0831hkq7anvh4q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
