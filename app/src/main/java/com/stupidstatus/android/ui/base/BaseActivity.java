@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.crashlytics.android.Crashlytics;
+import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.stupidstatus.android.R;
 
@@ -26,6 +27,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(getLayoutId());
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-2389898029257514~6196164583");
         Fabric.with(this, new Crashlytics());
         firebaseAnalytics = FirebaseAnalytics.getInstance(this);
         bindViews();

@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.stupidstatus.android.R;
 import com.stupidstatus.android.data.Status;
 import com.stupidstatus.android.data.StatusQuery;
@@ -37,6 +39,7 @@ public class StatusActivity extends BaseActivity {
     //region Views
     @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.activity_main_status_text_view) TextView statusTextView;
+    @BindView(R.id.adView) AdView adView;
     //endregion
 
     //region Intents
@@ -50,6 +53,8 @@ public class StatusActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
+
+        initAd();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ENDPOINT)
@@ -94,6 +99,13 @@ public class StatusActivity extends BaseActivity {
                 logFirebaseEvent("4", "Failed to get status", "onFailure");
             }
         });
+    }
+    //endregion
+
+    //region Helpers
+    private void initAd() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
     }
     //endregion
 

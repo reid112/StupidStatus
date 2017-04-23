@@ -8,4 +8,6 @@
     <string name="button_add">Add</string>
     <string name="message_pleaseEnterStatus">Please enter a status</string>
     <string name="label_init">Stupid\nStatus</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-2389898029257514/7672897789</string>
 </resources>
