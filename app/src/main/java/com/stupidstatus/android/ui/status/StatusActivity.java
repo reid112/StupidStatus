@@ -76,7 +76,6 @@ public class StatusActivity extends BaseActivity {
     //region Click Handlers
     @OnClick(R.id.activity_main_status_button)
     public void getStatus() {
-
         logFirebaseEvent("2", "Get Status", "Button Press");
 
         Call<Status> call = statusQuery.getStatus();

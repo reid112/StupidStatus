@@ -9,10 +9,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.crashlytics.android.Crashlytics;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.stupidstatus.android.R;
 
 import butterknife.ButterKnife;
+import io.fabric.sdk.android.Fabric;
 
 public abstract class BaseActivity extends AppCompatActivity {
     @Nullable protected AppBarLayout appBarLayout;
@@ -24,6 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(getLayoutId());
+        Fabric.with(this, new Crashlytics());
         firebaseAnalytics = FirebaseAnalytics.getInstance(this);
         bindViews();
         onInitializeActionBar();
